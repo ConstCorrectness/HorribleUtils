@@ -1,3 +1,9 @@
 [submodule "extern/nanobind"]
 	path = extern/nanobind
 	url = https://github.com/wjakob/nanobind
+[submodule "extern/googletest"]
+	path = extern/googletest
+	url = https://github.com/google/googletest.git
+[submodule "extern/googlebenchmark"]
+	path = extern/googlebenchmark
+	url = https://github.com/google/benchmark.git
