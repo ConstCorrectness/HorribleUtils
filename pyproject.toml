@@ -10,6 +10,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
 
+
 [tool.scikit-build]
 cmake-version = ">=3.25"
 
@@ -20,6 +21,6 @@ sdist.include = ["Src/horribleutils/_core.cpp", "src/cpp/**/*", "CMakeLists.txt"
 
 [tool.cibuildwheel]
 build-verbosity=1
-test-command "pytest {project}/tests/python"
+test-command = "pytest {project}/tests/python"
 test-requires = ["pytest", "pytest-benchmark", "numpy"]
 
