@@ -36,7 +36,7 @@ endif()
 find_package(Python COMPONENTS Interpreter Development.Module REQUIRED)
 find_package(nanobind CONFIG REQUIRED)
 
-add_library(horrible_core src/cpp/src/core.cpp)
+add_library(horrible_core src/cpp/src/core.cc)
 add_library(HorribleUtils::core ALIAS horrible_core)
 target_include_directories(horrible_core PUBLIC 
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src/cpp/include>
@@ -45,7 +45,7 @@ target_include_directories(horrible_core PUBLIC
 
 # 2. Define the Python Binding Module
 # The module name must match the import name in Python (e.g., _core)
-nanobind_add_module(_core src/horribleutils/_core.cpp)
+nanobind_add_module(_core src/horribleutils/_core.cc)
 target_link_libraries(_core PRIVATE horrible_core)
 
 # 3. Installation Rules
@@ -70,3 +70,4 @@ install(EXPORT HorribleUtilsTargets
     NAMESPACE HorribleUtils::
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/HorribleUtils
 )
+
