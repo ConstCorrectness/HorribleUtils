@@ -10,8 +10,6 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Python COMPONENTS Interpreter Development.Module REQUIRED)
-find_package(nanobind CONFIG REQUIRED)
-
 
 # Default to RelWithDebInfo
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPE)
@@ -19,5 +17,10 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPE)
     set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "minSizeRel" "RelWithDebInfo")
 endif()
 
+
+
+
+
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/extern/nanobind)
 
 

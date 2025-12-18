@@ -1,0 +1,25 @@
+[build-system]
+requires = ["scikit-build-core>=0.10", "nanobind>=2.0"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "HorribleUtils"
+version = "0.1.0"
+description = "Utils for C++/Python"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.scikit-build]
+cmake-version = ">=3.25"
+
+build-dir="build/{wheel_tag}"
+wheel.py-api="cp312"
+sdist.reproducible = true
+sdist.include = ["Src/horribleutils/_core.cpp", "src/cpp/**/*", "CMakeLists.txt"]
+
+[tool.cibuildwheel]
+build-verbosity=1
+test-command "pytest {project}/tests/python"
+test-requires = ["pytest", "pytest-benchmark", "numpy"]
+
