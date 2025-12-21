@@ -32,6 +32,7 @@ if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/extern/nanobind/CMakeLists.txt")
     add_subdirectory(extern/nanobind)
 endif()
 
+set(nanobind_DIR ${CMAKE_SOURCE_DIR}/extern/nanobind/cmake)
 
 find_package(Python COMPONENTS Interpreter Development.Module REQUIRED)
 find_package(nanobind CONFIG REQUIRED)
